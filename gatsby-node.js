@@ -85,7 +85,8 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
 }
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
-  if (stage === "build-html") {
+  console.log("this was hit!!!!!!!!!!!! The stage is " + stage);
+  if (stage.includes("-html")) {
     config.loader("null", {
       test: /pickaday/,
       loader: "null-loader",
